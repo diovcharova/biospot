@@ -7,6 +7,8 @@
             {{ user_form }}
                          
             <button type="submit" class="btn btn-primary">Login</button>
+
+            <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
         </fieldset>
     </form>
 {% endblock %}
