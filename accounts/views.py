@@ -47,6 +47,8 @@ def login(request):
 
 def register(request):
     """To manage the registration form"""
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
@@ -61,9 +63,15 @@ def register(request):
                 return redirect(reverse('index'))
 
             else:
-                messages.error(request, "Unable to log you in at this time!")
+                messages.error(request, "Unable to log you in!")
     else:
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
     return render(request, 'register.html', args)
+
+
+@login_required
+def profile(request):
+    """To display the profile page of a logged in user"""
+    return render(request, 'profile.html')
