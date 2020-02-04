@@ -22,7 +22,10 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-    """Validation for the email address"""
+    """
+    Validation for the email address.
+    It returns an error if an account with this email already exists.
+    """
     def clean_email(self):
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
@@ -30,7 +33,10 @@ class UserRegistrationForm(UserCreationForm):
             raise forms.ValidationError(u'Email addresses must be unique.')
         return email
 
-    """Validation of the password fields"""
+    """
+    Validation of the password fields
+    Checks in the passwords match and makes sure the password fields are filled in.
+    """
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
