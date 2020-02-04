@@ -34,8 +34,8 @@ class UserRegistrationForm(UserCreationForm):
         return email
 
     """
-    Validation of the password fields
-    Checks in the passwords match and makes sure the password fields are filled in.
+    Validation of the password fields.
+    Checks if the passwords match and makes sure the password are filled in.
     """
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
