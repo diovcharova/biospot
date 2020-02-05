@@ -16,19 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from accounts import urls as accounts_urls
-from cart import urls as cart_urls
-from checkout import urls as checkout_urls
-from home import urls as home_urls
-from products import urls as products_urls
-from search import urls as search_urls
+# from cart import urls as cart_urls
+# from checkout import urls as checkout_urls
+# from home import urls as home_urls
+# from products import urls as products_urls
+# from search import urls as search_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include(accounts_urls)),
-    path('cart/', include(cart_urls)),
-    path('checkout/', include(checkout_urls)),
-    path('home/', include(home_urls)),
-    path('products/', include(products_urls)),
-    path('search/', include(search_urls)),
+    # path('cart/', include(cart_urls)),
+    # path('checkout/', include(checkout_urls)),
+    # path('home/', include(home_urls)),
+    # path('products/', include(products_urls)),
+    # path('search/', include(search_urls)),
 ]
