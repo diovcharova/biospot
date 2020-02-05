@@ -1,3 +1,10 @@
+/* Navbar */
+.navbar{
+    background-image: none;
+    background-color: #677138; 
+}
+
+/* Callout container home page */
 .callout-container {
     height: 100vh;
 
