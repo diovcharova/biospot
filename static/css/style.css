@@ -2,6 +2,8 @@
 .navbar{
     background-image: none;
     background-color: #677138; 
+    border: none;
+    margin: 0;
 }
 
 /* Callout container home page */
@@ -45,4 +47,42 @@
 
 .jumbotron h4 {
     margin-bottom: 25px;
+}
+
+.custom-container {
+    margin-top: 15px;
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: #99b309;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+.link-custom {
+    color:rgb(129, 106, 84);
+}
+
+.noindent {
+    margin: 0;
+}
+
+.center-form {
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 0;
+}
+
+@media(min-width: 992px) {
+
+    .center-form {
+        padding-top: 30px;
+        min-height: 240px;
+        margin: 0 auto;
+        max-width: 50%;
+    }
+    .custom-container{
+        width:50%;
+    }
 }
