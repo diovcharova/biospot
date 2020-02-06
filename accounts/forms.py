@@ -49,9 +49,7 @@ class UserRegistrationForm(UserCreationForm):
 
 class UserUpdateForm(UserChangeForm):
     """Form to update user information"""
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email']
