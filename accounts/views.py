@@ -8,8 +8,14 @@ from django.contrib.auth import update_session_auth_hash
 
 
 def index(request):
-    """Return the index.html file"""
-    return render(request, 'index.html')
+    """
+    The index page. if a user is logged in, it redirects to the profile page.
+    Otherwise, it redirects to the login page.
+    """
+    if request.user.is_authenticated:
+        return redirect(reverse('profile'))
+    else:
+        return redirect(reverse('login'))
 
 
 @login_required
