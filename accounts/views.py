@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect, get_object_or_404
 from django.contrib import auth, messages
-from .forms import UserLoginForm, UserRegistrationForm
+from .forms import UserLoginForm, UserRegistrationForm, UserUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
@@ -82,10 +82,10 @@ def profile(request):
 def edit(request, pk):
     user = get_object_or_404(User, pk=pk)
     if request.method == "POST":
-        form = UserRegistrationForm(request.POST, instance=user)
+        form = UserUpdateForm(request.POST, instance=user)
         if form.is_valid():
             user = form.save()
             return redirect('profile')
     else:
-        form = UserRegistrationForm(instance=user)
+        form = UserUpdateForm(instance=user)
     return render(request, 'editprofile.html', {'form': form})
