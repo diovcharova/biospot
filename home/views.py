@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import ContactForm
 
 
 def homepage(request):
@@ -7,5 +8,6 @@ def homepage(request):
 
 
 def contactspage(request):
-    """Return the contacts.html file"""
-    return render(request, 'contacts.html')
+    """Return a contact form"""
+    form = ContactForm
+    return render(request, 'contacts.html', {'form': form})
