@@ -4,8 +4,13 @@
     background-color: #677138; 
     border: none;
     margin: 0;
+    height: 75px;
 }
 
+#navbar ul li a:hover{
+    background-color: #677138;
+    color: #8f8f8f;
+}
 /* Callout container home page */
 .callout-container {
     height: 100vh;
@@ -55,9 +60,17 @@
 
 /* Buttons */
 .btn-custom {
-    background-color: #99b309;
+    background: #99b309;
     border-radius: 50px;
     margin: 5px;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.btn-custom:hover{
+    background: #677138;
 }
 
 .link-custom {
@@ -78,11 +91,68 @@
 
     .center-form {
         padding-top: 30px;
-        min-height: 240px;
         margin: 0 auto;
         max-width: 50%;
     }
     .custom-container{
         width:50%;
     }
+}
+
+.display-inline-block{
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    background-color: #677138;
+    opacity: .85;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    right: 0;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 7px;
+    text-align: center;
+    color:white;
+    background: #8f8f8f;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-links li a i:hover {
+    background: rgb(129, 106, 84);
+}
+
+.footer-links{
+    color: white;
+    font-size: 15px;
+}
+
+.footer-links:hover{
+    color: #8f8f8f;
+    text-decoration: none;
+}
+
+.color-grey{
+    color: #444;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-size{
+    height: 50px;
 }
