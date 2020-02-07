@@ -111,7 +111,6 @@
 /* Footer */
 footer {
     background-color: #677138;
-    opacity: .85;
     margin: 0;
     position: relative;
     bottom: 0;
@@ -163,11 +162,11 @@ footer {
 }
 
 .product {
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
 }
 
@@ -193,4 +192,8 @@ caption p {
 
 .product-description {
     min-height: 40px;
+}
+
+.contained{
+    width: 150px;
 }
