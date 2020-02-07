@@ -37,5 +37,5 @@ def contactspage(request):
             )
             email.send()
             messages.success(request, 'Your message was successfully sent!')
-            return redirect('contacts')
+            return redirect('contactspage')
     return render(request, 'contacts.html', {'form': form})
