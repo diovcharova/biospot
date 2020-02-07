@@ -22,6 +22,8 @@ from home import urls as home_urls
 from home.views import homepage
 from products import urls as products_urls
 # from search import urls as search_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -33,4 +35,4 @@ urlpatterns = [
     path('home/', include(home_urls)),
     path('products/', include(products_urls)),
     # path('search/', include(search_urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
