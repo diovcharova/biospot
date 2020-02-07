@@ -162,6 +162,10 @@ footer {
     color: #444;
 }
 
+.color-white{
+    color: white;
+}
+
 .centered {
     display: flex;
     align-items: center;
@@ -218,6 +222,6 @@ caption p {
 }
 
 .label-warning[href],
-.badge-warning[href] {
+.badge-warning {
     background-color: #c67605;
 }
