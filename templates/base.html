@@ -36,6 +36,14 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right  centered">
+                    <li>
+                        <div class="display">
+                            <form action="{% url 'search' %}" method="get">
+                                <input type="text" name="q">
+                                <button type="submit" class="btn btn-sm btn-custom-grey color-white">Search</button>
+                            </form>
+                        </div>
+                    </li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}" class=""><i class="fa fa-user"></i> Profile</a></li>
                         <li><a href="{% url 'edit_profile' user.id %}" class=""><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>
@@ -66,12 +74,6 @@
         </div>
     {% endif %}
     <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
-        </div>
         {% block content %} {% endblock %}
     </div>
     </div>

@@ -222,6 +222,6 @@ caption p {
 }
 
 .label-warning[href],
-.badge-warning {
+.badge-warning[href] {
     background-color: #c67605;
 }
