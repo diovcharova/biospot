@@ -20,7 +20,7 @@ from accounts import urls as accounts_urls
 # from checkout import urls as checkout_urls
 from home import urls as home_urls
 from home.views import homepage
-# from products import urls as products_urls
+from products import urls as products_urls
 # from search import urls as search_urls
 
 
@@ -31,6 +31,6 @@ urlpatterns = [
     # path('cart/', include(cart_urls)),
     # path('checkout/', include(checkout_urls)),
     path('home/', include(home_urls)),
-    # path('products/', include(products_urls)),
+    path('products/', include(products_urls)),
     # path('search/', include(search_urls)),
 ]
