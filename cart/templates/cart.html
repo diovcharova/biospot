@@ -36,7 +36,7 @@
 <div class="row text-right">
     <p><h4 class="color-grey">Total:   <span class="fa fa-eur" aria-hidden="true"></span> {{ total }} </h4>
     <a href="{% url 'products' %}" class="btn btn-custom-grey color-white" role="button"><span class="fa fa-step-backward" aria-hidden="true"></span> Back to store</a>
-    <a href="#" class="btn btn-custom color-grey" role="button"><span class="fa fa-check-square-o" aria-hidden="true"></span> Checkout</a>
+    <a href="{% url 'checkout' %}" class="btn btn-custom color-grey" role="button"><span class="fa fa-check-square-o" aria-hidden="true"></span> Checkout</a>
 </div>
 
 {% endblock %}
