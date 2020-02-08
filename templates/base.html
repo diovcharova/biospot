@@ -9,59 +9,67 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="#" />
     <title>{% block page_title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-masthead navbar-default noindent">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'homepage' %}">
-                <img src="{% static 'media/images/logo.png' %}" class="logo-size">
-                </a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right  centered">
-                    <li>
-                        <div class="display">
-                            <form action="{% url 'search' %}" method="get">
-                                <input type="text" name="q">
-                                <button type="submit" class="btn btn-sm btn-custom-grey color-white">Search</button>
-                            </form>
-                        </div>
-                    </li>
-                    {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}" class=""><i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="{% url 'edit_profile' user.id %}" class=""><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>
-                        <li><a href="{% url 'logout' %}" class=""><i class="fa fa-sign-out"></i> Log Out</a></li>
-                    {%  else %}
-                        <li><a href="{% url 'register' %}" class=""><i class="fa fa-user-plus"></i> Register</a></li>
-                        <li><a href="{% url 'login' %}" class=""><i class="fa fa-sign-in"></i> Log In</a></li>
-                    {% endif %}
-                    <li>
-                        <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shipping-cart"></i> Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning color-grey">{{ product_count }}</label>
-                            {% endif %}
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <ul class="nav justify-content-end">
+        {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link"><i class="fa fa-user"></i> Profile</a></li>
+            <li class="nav-item"><a href="{% url 'edit_profile' user.id %}" class="nav-link"><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out"></i> Log Out</a></li>
+        {%  else %}
+            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link"><i class="fa fa-user-plus"></i> Register</a></li>
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link"><i class="fa fa-sign-in"></i> Log In</a></li>
+        {% endif %}
+        <li class="nav-item">
+            <a href="{% url 'view_cart' %}" class="nav-link">
+                <i class="fa fa-shipping-cart"></i> Cart
+                {% if product_count > 0 %}
+                    <label class="badge badge-warning color-grey">{{ product_count }}</label>
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+     <nav class="navbar navbar-expand-lg navbar-light navbar-default noindent">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+            <img src="{% static 'media/images/logo.png' %}" class="logo-size">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right mr-auto centered">
+                <li class="nav-item"><a href="{% url 'homepage' %}" class="text-decoration-none nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Products</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'products' %}">All products</a>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#" class="text-decoration-none nav-link">Blog</a></li>
+                <li class="nav-item"> <a href="#" class="text-decoration-none nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="{% url 'contacts' %}" class="text-decoration-none nav-link">Contacts</a></li>
+            </ul>
+            <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
+                <input type="text" name="q" class="form-control mr-sm-2">
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-sm btn-custom-grey color-white my-2 my-sm-0 text-right">Search</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </nav>
     {% if messages %}
@@ -93,18 +101,10 @@
                 <a href="{% url 'contacts' %}" class="text-decoration-none footer-links">Contacts</a>
             </div>
             <div class="col-sm-3 display-inline-block">
-                <h5 class="centered noindent color-grey">Already a member?</h5>
-                <div class="row ">
-                    <div class=" centered ">
-                        <a href="{% url 'login' %}" class="footer-links">Log In</a>
-                    </div>
-                </div>
-                <h5 class="centered noindent color-grey">Not a member?</h5>
-                <div class="row">
-                    <div class="centered">
-                        <a href="{% url 'register' %}" class="footer-links">Create an account</a>
-                    </div>
-                </div>
+                <h6 class="centered noindent color-grey">Already a member?</h6>
+                <a href="{% url 'login' %}" class="footer-links centered">Log In</a>
+                <h6 class="centered noindent color-grey">Not a member?</h6>
+                <a href="{% url 'register' %}" class="footer-links centered">Create an account</a>
                 <h5 class="centered color-grey">Follow us on:</h5>
                 <ul class="list-inline social-links centered">
                     <li class="list-inline-item">

@@ -5,11 +5,11 @@
     border: none;
     margin: 0;
     height: 75px;
+    box-shadow: none;
 }
 
-.nav,
-#navbar{
-    min-height: 75px;
+.nav{
+    background-color: #677138;
 }
 
 #navbar ul li a:hover{
@@ -84,7 +84,10 @@
     -o-transition: all 0.35s ease-in-out;
 }
 
-.btn-custom-grey:hover,
+.btn-custom-grey:hover{
+    background-color: rgb(129, 106, 84);
+}
+
 .btn-custom:hover{
     background: #677138;
 }
@@ -101,6 +104,10 @@
     margin: 0 auto;
     max-width: 60%;
     padding: 0;
+}
+
+.form-control{
+    margin: auto 7px;
 }
 
 @media(min-width: 992px) {
@@ -173,9 +180,21 @@ footer {
 }
 
 .logo-size{
-    height: 50px;
+    height: 60px;
 }
 
+.nav-link{
+    color:white;
+}
+
+.nav-link:hover{
+    color: #8f8f8f;
+}
+
+#navbarNavDropdown{
+    background-color:#677138; 
+    z-index: 1;
+}
 .product {
     background-size: cover;
     background-position: center center;
