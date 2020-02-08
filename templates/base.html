@@ -26,7 +26,8 @@
     <ul class="nav justify-content-end">
         {% if user.is_authenticated %}
             <li class="nav-item pt-2"><a href="{% url 'profile' %}" class="nav-link"><i class="fa fa-user"></i> Profile</a></li>
-            <li class="nav-item pt-2"><a href="{% url 'edit_profile' user.id %}" class="nav-link"><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out"></i> Log Out</a></li>
+            <li class="nav-item pt-2"><a href="{% url 'edit_profile' user.id %}" class="nav-link"><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>                        
+            <li class="nav-item pt-2"><a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out"></i> Log Out</a></li>
         {%  else %}
             <li class="nav-item pt-2"><a href="{% url 'register' %}" class="nav-link"><i class="fa fa-user-plus"></i> Register</a></li>
             <li class="nav-item pt-2"><a href="{% url 'login' %}" class="nav-link"><i class="fa fa-sign-in"></i> Log In</a></li>
