@@ -179,6 +179,10 @@ footer {
     justify-content: center;
 }
 
+.contents{
+    min-height: 25em;
+}
+
 .logo-size{
     height: 60px;
 }
