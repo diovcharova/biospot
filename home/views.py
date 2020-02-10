@@ -3,6 +3,7 @@ from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.template.loader import get_template
 from django.contrib import messages
+import os
 
 
 def homepage(request):
@@ -38,4 +39,5 @@ def contactspage(request):
             email.send()
             messages.success(request, 'Your message was successfully sent!')
             return redirect('contactspage')
-    return render(request, 'contacts.html', {'form': form})
+    API_KEY = os.environ.get('GOOGLE_API')
+    return render(request, 'contacts.html', {'form': form, 'API_KEY': API_KEY})
