@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% load bootstrap_tags %}
 
 {% block page_title %}Contact us{% endblock %}
@@ -7,9 +9,9 @@
 {% block content %}
     <div class="row">
         <div class="col-md-6">
-            <div class="container-contact mt-5 ">
+            <div class="container-contact mt-5 text-center">
                 <h5 class="">Welcome to Bio Spot Burgas</h5>
-                <p>ul. Sv. sv. Kiril i Metodii 14 <br>8000 Burgas</p>
+                <p>ul. Sv. sv. Kiril i Metodii 14 <br>8000 Burgas<br>Bulgaria</p>
                 <p><strong>Phone:</strong> +359 88 961 6659 <br>
                 <strong>Opening hours:</strong> Mon-Fri 08:00-19:00, Sat-Sun 10:00-18:00</p>
             </div>
@@ -29,4 +31,8 @@
         </fieldset>
     </form>
 </div>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{API_KEY}}&callback=initMap"></script>
+<script type="text/javascript" src="{% static 'js/maps.js' %}"></script>
+
 {% endblock %}
