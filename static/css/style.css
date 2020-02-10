@@ -248,3 +248,8 @@ caption p {
 .badge-warning[href] {
     background-color: #c67605;
 }
+
+#map{
+    min-height: 360px;
+    margin-top: 15px;
+}
