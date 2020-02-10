@@ -85,7 +85,7 @@
 }
 
 .btn-custom-grey:hover{
-    background-color: rgb(129, 106, 84);
+    background-color: #99b309;
 }
 
 .btn-custom:hover{
@@ -152,7 +152,7 @@ footer {
 }
 
 .social-links li a i:hover {
-    background: rgb(129, 106, 84);
+    background: #99b309;
 }
 
 .footer-links{
