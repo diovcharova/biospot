@@ -265,3 +265,18 @@ table{
 td{
     width: 50%;
 }
+
+.carousel-indicators .active{
+    background-color:  #333333;
+}
+.carousel-inner,
+.carousel{
+    max-height: 550px;
+}
+.carousel-image{
+    opacity: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
