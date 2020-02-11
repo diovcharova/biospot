@@ -24,12 +24,12 @@ class Producer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
-    categories = models.ManyToManyField(Category, blank=True, symmetrical=False)
-    tags = models.ManyToManyField(Tag, blank=True)
-    description = models.TextField()
     package = models.CharField(max_length=45,default='')
-    producer = models.ManyToManyField(Producer, blank=True, symmetrical=False)
+    categories = models.ManyToManyField(Category, blank=True, symmetrical=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    description = models.TextField()
+    producer = models.ManyToManyField(Producer, blank=True, symmetrical=False)
+    tags = models.ManyToManyField(Tag, blank=True)
     image = models.ImageField(upload_to='images')
     code_internal = models.IntegerField(null=True)
 
