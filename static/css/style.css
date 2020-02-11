@@ -8,7 +8,7 @@
     box-shadow: none;
 }
 
-.nav{
+#nav{
     background-color: #677138;
 }
 
@@ -188,7 +188,7 @@ footer {
 }
 
 .nav-link{
-    color:white;
+    color:rgba(0,0,0,.5);
 }
 
 .nav-link:hover{
@@ -279,4 +279,8 @@ td{
     background-position: center center;
     background-repeat: no-repeat;
     margin: 0 auto;
+}
+
+.card-body{
+    height: 475px;
 }

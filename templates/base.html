@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <ul class="nav justify-content-end">
+    <ul class="nav justify-content-end" id="nav">
         {% if user.is_authenticated %}
             <li class="nav-item pt-2"><a href="{% url 'profile' %}" class="nav-link"><i class="fa fa-user"></i> Profile</a></li>
             <li class="nav-item pt-2"><a href="{% url 'edit_profile' user.id %}" class="nav-link"><i class="fa fa-pencil-square-o"></i> Edit profile</a></li>                        
