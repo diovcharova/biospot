@@ -3,12 +3,8 @@
 {% load bootstrap_tags %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
-<script type="text/javascript">
-    //<![CDATA[
-        Stripe.publishableKey = '{{ publishable }}';
-    //]]>
-</script>
+<script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript">Stripe.setPublishableKey('{{ publishable }}');</script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
