@@ -13,21 +13,16 @@
             <h3 class="color-grey">{{ item.product.name }}</h3>
             <p><span class="fa fa-eur" aria-hidden="true"></span> {{ item.product.price }}</p>
             <p class="product-description">{{ item.product.description }}</p>
-            <p>
-                
-                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" min="0" max="999" class="form-control">
-                            <div class="input-group-addon">{{item.quantity}}</div>
-                        </div>
+            <p>Qty: {{item.quantity}}</p>
+            <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="0" max="999" class=" mb-10">
+                        <button type="submit" class="btn btn-custom"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Update qty</button>
                     </div>
-                    <button type="submit" class="btn btn-custom"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Update qty</button>
-                </form>
-            </p>
+                </div>
+            </form>
         </div>
     </div>
     </div>
