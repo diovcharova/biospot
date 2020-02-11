@@ -284,3 +284,8 @@ td{
 .card-body{
     height: 475px;
 }
+
+.pagination{
+    position: absolute;
+    bottom: 50px;
+}
