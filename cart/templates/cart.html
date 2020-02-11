@@ -17,9 +17,11 @@
             <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="0" max="999" class=" mb-10">
-                        <button type="submit" class="btn btn-custom"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>Update qty</button>
+                    <div class="input-group centered contained">
+                            <input name="quantity" type="number" min="1" max="999" class="" placeholder="Qty">
+                            <span class="input-group-btn">
+                                <button class="btn btn-custom" type="submit">Update quantity</button>
+                            </span>
                     </div>
                 </div>
             </form>
