@@ -169,6 +169,10 @@ footer {
     color: #444;
 }
 
+.color-grey:hover{
+    color: #677138;
+}
+
 .color-white{
     color: white;
 }

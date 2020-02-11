@@ -3,14 +3,14 @@
 {% block content %}
 <div class="row row-flex">
     {% for product in page_obj %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card mb-5">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card mb-5 mr-3">
             <div class="card-body">
                 <div class="nav nav-tabs mb-2 " role="tablist" id="card_tab">
-                    <a data-toggle="tab" href="#home" class=" nav-item nav-link active" role="tab" aria-controls="home" aria-selected="true">Product</a></li>
-                    <a data-toggle="tab" href="#more" class=" nav-item nav-link " role="tab" aria-controls="more" aria-selected="false">Show more</a></li>
+                    <a data-toggle="tab" href="#{{ product.id }}" class=" nav-item nav-link active" role="tab" aria-controls="{{product.id}}" aria-selected="true">Product</a></li>
+                    <a data-toggle="tab" href="#{{product.description}}" class=" nav-item nav-link " role="tab" aria-controls="{{product.description}}" aria-selected="false">Show more</a></li>
                 </div>
                 <div class="tab-content ">
-                    <div id="home" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home">
+                    <div id="{{ product.id }}" class="tab-pane fade show active" role="tabpanel" aria-labelledby="{{product.id}}">
                         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
                         <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
@@ -27,7 +27,7 @@
                             </div>
                         </form>
                     </div>
-                    <div id="more" class="tab-pane fade" role="tabpanel" aria-labelledby="more">
+                    <div id="{{product.description}}" class="tab-pane fade" role="tabpanel" aria-labelledby="{{product.description}}">
                         <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
                         <p>In category: {{ product.categories }}</p>
                         <p><span class="fa fa-eur" aria-hidden="true"></span> {{ product.price }}</p>
@@ -42,8 +42,8 @@
     <div class="pagination ">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <a href="?page=1" class="text-decoration-none color-grey">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="text-decoration-none color-grey">previous</a>
         {% endif %}
 
         <span class="current">
@@ -51,8 +51,8 @@
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}" class="text-decoration-none color-grey">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="text-decoration-none color-grey">last &raquo;</a>
         {% endif %}
     </span>
 </div>
