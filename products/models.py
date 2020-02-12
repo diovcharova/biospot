@@ -12,7 +12,7 @@ class Category(models.Model):
     category = models.CharField(max_length=40)
 
     def __str__(self):
-        return self.category
+        return "{0}-{1}".format(self.id, self.category)
 
 
 class Producer(models.Model):
