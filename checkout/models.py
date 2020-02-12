@@ -23,6 +23,9 @@ class OrderLineItem(models.Model):
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
 
+    def total(self):
+        return self.quantity * self.product.price
+
     def __str__(self):
         return "{0} {1} @ {2}".format(
             self.quantity, self.product.name, self.product.price)
