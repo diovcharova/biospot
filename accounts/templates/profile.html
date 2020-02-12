@@ -21,7 +21,7 @@
                     <td>
                         {% for item in orderlineitems %}
                             {% if item.order.id == order.id%}
-                            {{ item.product }} x{{ item.quantity }}<br>
+                            {{ item.quantity }}x{{ item.product }} ({{item.product.price}}) = <span class="fa fa-eur" aria-hidden="true"></span>{{item.total}}<br>
                             {% endif %}
                         {% endfor %}
                     </td>
