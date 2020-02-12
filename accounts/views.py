@@ -5,7 +5,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 
 
 def index(request):
@@ -85,7 +85,8 @@ def register(request):
 def profile(request):
     """To display the profile page of a logged in user"""
     orders = Order.objects.filter(email=request.user.email)
-    return render(request, 'profile.html', {'orders': orders})
+    orderlineitems = OrderLineItem.objects.all()
+    return render(request, 'profile.html', {'orders': orders, 'orderlineitems': orderlineitems})
 
 
 @login_required
