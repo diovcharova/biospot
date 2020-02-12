@@ -25,14 +25,8 @@
                             {% endif %}
                         {% endfor %}
                     </td>
-                    <td>
-                        {% for item in orderlineitems %}
-                            {% if item.order.id == order.id%}
-                                    {{ item.total }}
-                            {% endif %}
-                        {% endfor %}
-                    </td>
-                    </tr>
+                    <td></td>
+                </tr>
             {% endfor %}
             </tbody>
         </table>

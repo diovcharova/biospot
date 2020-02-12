@@ -24,7 +24,7 @@ class Producer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
-    package = models.CharField(max_length=45,default='')
+    package = models.CharField(max_length=45, default='')
     categories = models.ManyToManyField(Category, blank=True, symmetrical=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
