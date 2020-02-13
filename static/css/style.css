@@ -55,10 +55,6 @@
     background-color: transparent;
 }
 
-.jumbotron h4 {
-    margin-bottom: 25px;
-}
-
 .custom-container {
     margin-top: 15px;
 }
@@ -293,3 +289,25 @@ td{
     position: absolute;
     bottom: 50px;
 }
+
+.dropdown-menu{
+    z-index: 1;
+}
+
+.card-img-right {
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+  .h-md-250 { height: 250px; }
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
