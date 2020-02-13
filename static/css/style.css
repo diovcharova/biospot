@@ -1,5 +1,3 @@
-html, body {margin: 0; height: 100%; overflow: hidden}
-
 /* Navbar */
 .navbar{
     background-image: none;
@@ -296,7 +294,7 @@ td{
 
 .card-img-top {
     width: 100%;
-    height: 20vw;
+    height: 15em;
     object-fit: cover;
 }
 
