@@ -1,3 +1,5 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+
 /* Navbar */
 .navbar{
     background-image: none;
@@ -294,20 +296,6 @@ td{
     z-index: 1;
 }
 
-.card-img-right {
-  height: 100%;
-  border-radius: 0 3px 3px 0;
+.border-footer{
+    border-left: solid 1px #E8E4DC;
 }
-
-.flex-auto {
-  -ms-flex: 0 0 auto;
-  -webkit-box-flex: 0;
-  flex: 0 0 auto;
-}
-
-.h-250 { height: 250px; }
-@media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
-}
-
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
