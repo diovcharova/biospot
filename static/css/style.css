@@ -287,6 +287,19 @@ td{
     height: 475px;
 }
 
+.card-img{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height:100%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
 .pagination{
     position: absolute;
     bottom: 50px;
