@@ -33,3 +33,8 @@ class TestProductModel(TestCase):
         product = Product(name="a product")
         max_length = product._meta.get_field('name').max_length
         self.assertEquals(max_length, 254)
+
+    def test_can_create_product_with_name_and_price(self):
+        product = Product(name="a product", price=1.99)
+        self.assertEquals(product.name, "a product")
+        self.assertEquals(product.price, 1.99)
