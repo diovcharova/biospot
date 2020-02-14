@@ -298,10 +298,6 @@ td{
     object-fit: cover;
 }
 
-.pagination{
-    bottom: 50px;
-}
-
 .dropdown-menu{
     z-index: 1;
 }
