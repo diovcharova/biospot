@@ -12,4 +12,4 @@ class TestUserLogInForm(TestCase):
 
     def test_login(self):
         response = self.client.post('/login/', self.credentials, follow=True)
-        self.assertTrue(response.context['user'].is_authneticated)
+        self.assertTrue(response.context['username_or_email'].is_authneticated)
