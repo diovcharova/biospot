@@ -13,6 +13,7 @@ class Order(models.Model):
     county = models.CharField(max_length=40, blank=False)
     date = models.DateField()
     email = models.CharField(max_length=50, blank=False)
+    total = models.CharField(max_length=50, blank=False, default="")
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
