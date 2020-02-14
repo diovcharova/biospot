@@ -12,7 +12,7 @@ class Category(models.Model):
     category = models.CharField(max_length=40)
 
     def __str__(self):
-        return "{0}-{1}".format(self.id, self.category)
+        return self.category
 
 
 class Producer(models.Model):
@@ -24,7 +24,7 @@ class Producer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
-    package = models.CharField(max_length=45, default='')
+    package = models.CharField(max_length=45, default='', blank=True)
     categories = models.ManyToManyField(Category, blank=True, symmetrical=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
