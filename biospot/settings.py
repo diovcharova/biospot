@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'storages',
+    'search',
 ]
 
 MIDDLEWARE = [
