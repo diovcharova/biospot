@@ -27,7 +27,7 @@ class Product(models.Model):
     package = models.CharField(max_length=45, default='', blank=True)
     categories = models.ManyToManyField(Category, blank=True, symmetrical=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     producer = models.ManyToManyField(Producer, blank=True, symmetrical=False)
     tags = models.ManyToManyField(Tag, blank=True)
     image = models.ImageField(upload_to='images')
