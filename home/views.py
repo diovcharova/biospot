@@ -4,6 +4,7 @@ from django.core.mail import EmailMessage
 from django.template.loader import get_template
 from django.contrib import messages
 import os
+from django.urls import reverse
 
 
 def homepage(request):
@@ -37,7 +38,7 @@ def contactspage(request):
             )
             email.send()
             messages.success(request, 'Your message was successfully sent!')
-            return redirect('contactspage')
+            return redirect(reverse('homepage'))
         else:
             messages.error(request, "Your message was NOT sent!")
     else:
