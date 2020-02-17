@@ -13,9 +13,8 @@ def homepage(request):
 
 def contactspage(request):
     """Return a contact form"""
-    form = ContactForm
     if request.method == 'POST':
-        form = form(data=request.POST)
+        form = ContactForm(data=request.POST)
         if form.is_valid():
             contact_name = request.POST.get('contact_name', '')
             contact_email = request.POST.get('contact_email', '')
@@ -39,5 +38,9 @@ def contactspage(request):
             email.send()
             messages.success(request, 'Your message was successfully sent!')
             return redirect('contactspage')
+        else:
+            messages.error(request, "Your message was NOT sent!")
+    else:
+        form = ContactForm()
     API_KEY = os.environ.get('GOOGLE_API')
     return render(request, 'contacts.html', {'form': form, 'API_KEY': API_KEY})
