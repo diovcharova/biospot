@@ -41,6 +41,7 @@
                 </div>
             </div>
         {% endfor %}
+        {% if  page_obj.paginator.num_pages > 1 %}
         <div class="pagination ">
         <span class="step-links">
             {% if page_obj.has_previous %}
@@ -57,7 +58,8 @@
                 <a href="?page={{ page_obj.paginator.num_pages }}" class="text-decoration-none color-grey">last &raquo;</a>
             {% endif %}
         </span>
+        </div>
+        {% endif %}
     {% endif %}
-</div>
 </div>
 {% endblock %}
