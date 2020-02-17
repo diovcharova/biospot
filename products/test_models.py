@@ -1,12 +1,5 @@
 from django.test import TestCase
-from .models import Tag, Category, Producer, Product
-
-
-class TestTagModel(TestCase):
-
-    def test_str(self):
-        test_name = Tag(tag='a tag')
-        self.assertEqual(str(test_name), 'a tag')
+from .models import Category, Producer, Product
 
 
 class TestCategoryModel(TestCase):
