@@ -29,14 +29,14 @@ def contactspage(request):
             }
             content = template.render(context)
 
-            email = EmailMessage(
-                "New contact form submission",
-                content,
-                "Your website" + '',
-                ['youremail@gmail.com'],
-                headers={'Reply-To': contact_email}
-            )
-            email.send()
+            # email = EmailMessage(
+            #     "New contact form submission",
+            #     content,
+            #     "Your website" + '',
+            #     ['youremail@gmail.com'],
+            #     headers={'Reply-To': contact_email}
+            # )
+            # email.send()
             messages.success(request, 'Your message was successfully sent!')
             return redirect(reverse('homepage'))
         else:
