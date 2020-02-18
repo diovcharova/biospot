@@ -5,6 +5,7 @@
 {% block content %}
 <div class="container custom-container">
     <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
+        <p>Don't have an account? <a href="{% url 'register' %}">Sign up here.</a></p>
         <fieldset class="form-group">
             <legend>Login</legend>
             {% csrf_token %}
