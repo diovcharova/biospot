@@ -39,7 +39,7 @@ def login(request):
 
             if user:
                 auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
+                messages.success(request, "You have successfully logged in")
 
                 if request.GET and request.GET['next'] != '':
                     next = request.GET['next']
