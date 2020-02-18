@@ -10,7 +10,7 @@ def all_products(request):
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'products.html', {'page_obj': page_obj})
+    return render(request, 'products.html', {'page_obj': page_obj, 'products': products})
 
 
 def products_skincare_and_beauty(request):

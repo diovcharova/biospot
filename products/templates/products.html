@@ -5,49 +5,50 @@
     {% if not products %}
         <h4>Oops! There are no products.</h4>
     {% else %}
-    {% for product in page_obj %}
-        <div class=" col-md-6 col-lg-4 display card mb-5">
-            <div class="card-body">
-                <div class="nav nav-tabs mb-2 " role="tablist" id="card_tab">
-                    <a data-toggle="tab" href="#home{{ product.id }}" class=" nav-item nav-link active" role="tab" aria-controls="home{{ product.id }}" aria-selected="true">Product</a></li>
-                    <a data-toggle="tab" href="#more{{ product.id }}" class=" nav-item nav-link " role="tab" aria-controls="more{{ product.id }}" aria-selected="false">Show more</a></li>
-                </div>
-                <div class="tab-content ">
-                    <div id="home{{ product.id }}" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home{{ product.id }}">
-                        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-
-                        <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
-                        <p><span class="fa fa-eur" aria-hidden="true"></span> {{ product.price }}</p>
-                        {% if not product.description %}
-                        <p class="product-description d-none">{{ product.description }}</p>
-                        {% else %}
-                        <p class="product-description">{{ product.description }}</p>
-                        {% endif %}
-
-                        <form method="post" action="{% url 'add_to_cart' product.id %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="input-group contained">
-                                    <input name="quantity" type="number" min="1" max="999" class="form-control text-center" value="1">
-                                    <button class="btn btn-outline-secondary" type="submit">Add</button>
-                                </div>
-                            </div>
-                        </form>
+        {% for product in page_obj %}
+            <div class=" col-md-6 col-lg-4 display card mb-5">
+                <div class="card-body">
+                    <div class="nav nav-tabs mb-2 " role="tablist" id="card_tab">
+                        <a data-toggle="tab" href="#home{{ product.id }}" class=" nav-item nav-link active" role="tab" aria-controls="home{{ product.id }}" aria-selected="true">Product</a></li>
+                        <a data-toggle="tab" href="#more{{ product.id }}" class=" nav-item nav-link " role="tab" aria-controls="more{{ product.id }}" aria-selected="false">Show more</a></li>
                     </div>
-                    <div id="more{{ product.id }}" class="tab-pane fade" role="tabpanel" aria-labelledby="more{{ product.id }}">
-                        <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
-                        <p>In category: {{ product.category }}</p>
-                        <p><span class="fa fa-eur" aria-hidden="true"></span> {{ product.price }}</p>
-                        <p class="product-description">{{ product.description }}</p>
-                        <p>Producer: {{ product.producer }}</p>
+                    <div class="tab-content ">
+                        <div id="home{{ product.id }}" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home{{ product.id }}">
+                            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+
+                            <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
+                            <p><span class="fa fa-eur" aria-hidden="true"></span> {{ product.price }}</p>
+                            {% if not product.description %}
+                            <p class="product-description d-none">{{ product.description }}</p>
+                            {% else %}
+                            <p class="product-description">{{ product.description }}</p>
+                            {% endif %}
+
+                            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group contained">
+                                        <input name="quantity" type="number" min="1" max="999" class="form-control text-center" value="1">
+                                        <button class="btn btn-outline-secondary" type="submit">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="more{{ product.id }}" class="tab-pane fade" role="tabpanel" aria-labelledby="more{{ product.id }}">
+                            <h3 class="color-grey">{{ product.name }}, {{ product.package }}</h3>
+                            <p>In category: {{ product.category }}</p>
+                            <p><span class="fa fa-eur" aria-hidden="true"></span> {{ product.price }}</p>
+                            <p class="product-description">{{ product.description }}</p>
+                            <p>Producer: {{ product.producer }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
 </div>
     <div class="row">
         <div class="col">
+        {% if page_obj.paginator.num_pages > 1 %}
             <div class="pagination mb-2">
                 <span class="step-links">
                     {% if page_obj.has_previous %}
@@ -65,7 +66,8 @@
                     {% endif %}
                 </span>
             </div>
+        {% endif %}
         </div>
+    </div>
     {% endif %}
-</div>
 {% endblock %}
