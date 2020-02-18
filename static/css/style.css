@@ -139,9 +139,9 @@ footer {
     margin: 0;
 }
 
-@media(min-width: 481px) {
+@media(min-width: 768px) {
     footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
