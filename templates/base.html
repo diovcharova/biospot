@@ -36,8 +36,13 @@
         </li>
         <li class="nav-item m-auto m-md-2">
             <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0 ">
-                <input type="text" name="q" class="form-control mr-sm-2">
-                <button type="submit" class="btn btn-sm btn-custom-grey color-white my-2 my-sm-0 mx-auto">Search</button>
+                <div class="form-group">
+                    <div class="input-group contained">
+
+                    <input type="text" name="q" class="form-control mr-sm-2">
+                    <button type="submit" class="btn btn-outline-dark">Search</button>
+                    </div>
+                </div>
             </form>
         </li>
     </ul>
