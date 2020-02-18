@@ -79,7 +79,7 @@ The outcomes of the manual and automatic testing show the the website and its fe
 2. The site's source code is stored on the master branch (https://github.com/diovcharova/biospot).
 3. After creating a new app on Heroku, the site is deployed by pushing the code by the command 'git push origin master' to the Github repository. Heroku is connected to it and deploys happen automatically with each new push. 
 
-In order to deploy properly, a Procfile, specifying the dynos, and a 'requirements.txt' files are needed. The later contains the required frameworks and libraries for the application to run. Additionally, a web process needs to be started in the terminal and the variables need to be configured at Heroku. The evironment variables used locally also need to be added as 'config vars' on Heroku.
+In order to deploy properly, a Procfile, specifying the dynos, and a 'requirements.txt' files are needed. The later is created and updated by the command 'pip freeze > requirements.txt' and contains the required frameworks and libraries for the application to run. Additionally, a web process needs to be started in the terminal and the variables need to be configured at Heroku. The evironment variables used locally also need to be added as 'config vars' on Heroku.
 
 To run locally, the repository is cloned into the editor of choice by pasting 'git clone https://github.com/diovcharova/biospot' into the terminal.
 

@@ -22,11 +22,11 @@
 
                             <form method="post" action="{% url 'add_to_cart' product.id %}">
                                 {% csrf_token %}
-                                <div class="input-group centered contained">
-                                    <input name="quantity" type="number" min="1" max="999" class="" placeholder="Qty">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-custom" type="submit">Add</button>
-                                    </span>
+                                <div class="form-group">
+                                    <div class="input-group contained">
+                                        <input name="quantity" type="number" min="1" max="999" class="form-control text-center" value="1">
+                                        <button class="btn btn-outline-secondary" type="submit">Add</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
