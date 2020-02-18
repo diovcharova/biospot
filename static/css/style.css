@@ -137,9 +137,15 @@
 footer {
     background-color: #677138;
     margin: 0;
-    position: relative;
+}
+
+@media(min-width: 481px) {
+    footer{
+    position: absolute;
     bottom: 0;
     right: 0;
+    left: 0;
+    }  
 }
 
 .social-links li a i {
