@@ -5,7 +5,7 @@
 <div class="row row-flex">
     {% for item in cart_items %}
     
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card mr-3">
+    <div class="col-md-6 col-lg-4 display card mb-5">
         <div class="card-body">
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
         
@@ -17,11 +17,9 @@
             <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <div class="input-group centered contained">
-                            <input name="quantity" type="number" min="1" max="999" class="" placeholder="Qty">
-                            <span class="input-group-btn">
-                                <button class="btn btn-custom" type="submit">Update quantity</button>
-                            </span>
+                    <div class="input-group contained">
+                            <input name="quantity" type="number" min="0" max="999" class="text-center form-control" value="{{ item.quantity }}">
+                            <button class="btn btn-outline-secondary" type="submit">Update quantity</button>
                     </div>
                 </div>
             </form>
