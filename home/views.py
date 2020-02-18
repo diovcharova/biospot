@@ -32,8 +32,8 @@ def contactspage(request):
             email = EmailMessage(
                 "New contact form submission",
                 content,
-                "Your website" + '',
-                ['youremail@gmail.com'],
+                "BioSpot" + '',
+                [contact_email],
                 headers={'Reply-To': contact_email}
             )
             email.send()
