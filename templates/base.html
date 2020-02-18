@@ -69,13 +69,27 @@
         </div>
     </nav>
     {% if messages %}
-        <div class="alert alert-warning">
-            <div class="messages">
-                {% for message in messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success">
+                    <div class="messages">
+                        {{ message }}
+                    </div>
+                </div>
+            {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger">
+                <div class="messages">
                     {{ message }}
-                {% endfor %}
+                </div>
             </div>
-        </div>
+            {% else %}
+            <div class="alert alert-alert">
+                <div class="messages">
+                    {{ message }}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
     {% endif %}
     <div class="container contents">
         {% block content %} {% endblock %}
