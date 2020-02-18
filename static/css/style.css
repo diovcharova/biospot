@@ -139,15 +139,6 @@ footer {
     margin: 0;
 }
 
-@media(min-width: 767px) {
-    footer{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    }  
-}
-
 .social-links li a i {
     width: 32px;
     height: 32px;
@@ -275,7 +266,7 @@ td{
 }
 
 .contents{
-    min-height: 25em;
+    min-height: 60vh;
 }
 
 caption p {
