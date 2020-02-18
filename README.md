@@ -73,6 +73,7 @@ Different screen sizes have been tested to ensure responsiveness, in the develop
 
 The outcomes of the manual and automatic testing show the the website and its features work as expected. The access to the different pages of the website is clear and straightforward as the header provides links to them. It is intuitive and makes it easy for a user to use. The different user stories achieve the intended outcome. 
 
+It is important to note that setting Debug to False in the settings.py file prevents Django from sending emails and when requested displays an error with code 500.
 
 ## Deployment
 1. A Github repository is created.
