@@ -9,22 +9,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="row row-flex">
-    {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display card mr-3">
-            <div class="card-body">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-
-                <div class="caption">
-                    <h3 class="color-grey">{{ item.product.name }}</h3>
-                    <p>Price: <span class="fa fa-eur" aria-hidden="true"></span> {{ item.product.price }}</p>
-                    <p>Qty: {{ item.quantity }}</p>
-                    <p class="product-description">{{ item.product.description }}</p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-</div>
+<table class="table" >
+    <thead>
+        <tr>
+            <th scope="col">Order summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {% for item in cart_items %}
+                    {{ item.quantity }} x {{ item.product.name }} ({{item.product.price}}) <br>
+                {% endfor %}
+            </td>
+        </tr>
+    </tbody>
+</table>
 <div class="row justify-content-end">
     <p><h4 class="color-grey">Total:   <span class="fa fa-eur" aria-hidden="true"></span> {{ total }} </h4>
 </div>
