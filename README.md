@@ -22,9 +22,6 @@ After talking to the owners of Biospot there are several specific features they 
 * As the owner and admin of the page, I want to be able to easily manipulate the database entries. The main features of the products have to be highlighted and secondary information should be desplayed on request.
 * Contact between the customers and the shops should be as simplified as possible. 
 
-### UX based design
-As part of the design process, I developed wireframes, which can be viewed [here](), and mockups, which can be viewed [here](). They are based on the requirements of the owners of the shop. The design and functionalities are suited to their needs.
-
 ## Features
 
 ### Existing Features
